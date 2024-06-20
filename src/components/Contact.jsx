@@ -36,10 +36,10 @@ const Contact = () => {
 				import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
 				import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
 				{
-					from_name: form.name,
-					to_name: 'Agamya Samuel',
-					from_email: form.email,
-					to_email: import.meta.env.VITE_APP_EMAILJS_EMAIL_ID,
+					from_name: 'Agamya Samuel',
+					to_name: form.name,
+					from_email: import.meta.env.VITE_APP_EMAILJS_EMAIL_ID,
+					to_email: form.email,
 					message: form.message,
 				},
 				import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
