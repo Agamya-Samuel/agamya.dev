@@ -26,13 +26,16 @@ import meta from './company/meta.png';
 import shopify from './company/shopify.png';
 import starbucks from './company/starbucks.png';
 import tesla from './company/tesla.png';
+import gdg from './gdg-color-logo-only.png';
+import wikimedia from './wikimedia-logo.png';
 
 import amazonia from './amazonia.png';
 import zoomify from './zoomify.png';
-import tripguide from './tripguide.png';
 import snapnexus from './snap-nexus.png';
 import photofusion from './photofusion-ai.png';
 import trackmydeals from './track-mydeals.png';
+import domagamyadev from './dom-agamya-dev.png';
+import courseList from './CoursesList.png';
 
 import live from './instagram-live.png';
 
@@ -59,15 +62,18 @@ export {
 	tailwind,
 	typescript,
 	threejs,
+	gdg,
+	wikimedia,
 	meta,
 	shopify,
 	starbucks,
 	tesla,
 	amazonia,
 	zoomify,
-	tripguide,
 	snapnexus,
 	photofusion,
 	trackmydeals,
+	domagamyadev,
+	courseList,
 	live,
 };

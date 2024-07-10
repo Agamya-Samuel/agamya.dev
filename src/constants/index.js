@@ -25,6 +25,10 @@ import {
 	snapnexus,
 	photofusion,
 	trackmydeals,
+	domagamyadev,
+	gdg,
+	wikimedia,
+	courseList,
 } from '../assets';
 
 export const navLinks = [
@@ -35,6 +39,10 @@ export const navLinks = [
 	{
 		id: 'work',
 		title: 'Work',
+	},
+	{
+		id: 'projects',
+		title: 'Projects',
 	},
 	{
 		id: 'contact',
@@ -58,6 +66,10 @@ const services = [
 	{
 		title: 'Content Creator',
 		icon: creator,
+	},
+	{
+		title: 'Database Administrator',
+		icon: web,
 	},
 ];
 
@@ -122,57 +134,62 @@ const technologies = [
 
 const experiences = [
 	{
-		title: 'React.js Developer',
-		company_name: 'Starbucks',
-		icon: starbucks,
-		iconBg: '#383E56',
-		date: 'March 2020 - April 2021',
+		title: 'Technical Lead and Design Lead',
+		company_name: 'Google Developer Group, Prayagraj',
+		icon: gdg,
+		iconBg: '#fff',
+		date: 'August 2023 -',
 		points: [
-			'Developing and maintaining web applications using React.js and other related technologies.',
-			'Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.',
-			'Implementing responsive design and ensuring cross-browser compatibility.',
-			'Participating in code reviews and providing constructive feedback to other developers.',
+			'Led the "Design and development of multiple community-driven projects", enhancing collaboration and engagement within the tech community.',
+			'Managed a "Team of Developers and Designers", ensuring timely delivery of high-quality projects and fostering a collaborative work environment.',
+			'Organized and facilitated "Technical Hands-on Workshops and Hack-a-thons, Quizzes" - providing guidance and mentorship to participants and promoting knowledge sharing.',
+			'Collaborated with industry experts and speakers to curate and deliver impactful sessions during events, contributing to the growth and learning of community members.',
+			'Organized and hosted community events, meetups, and conferences, fostering a culture of learning, networking, and collaboration among tech enthusiasts.',
 		],
 	},
 	{
-		title: 'React Native Developer',
-		company_name: 'Tesla',
-		icon: tesla,
-		iconBg: '#E6DEDD',
-		date: 'Jan 2021 - Feb 2022',
+		title: 'Open Source Contribution',
+		company_name: 'Wikimedia (Wikipedia)',
+		icon: wikimedia,
+		iconBg: '#fff',
+		date: 'July 2024 - Present',
 		points: [
-			'Developing and maintaining web applications using React.js and other related technologies.',
-			'Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.',
-			'Implementing responsive design and ensuring cross-browser compatibility.',
-			'Participating in code reviews and providing constructive feedback to other developers.',
+			'Actively Contributing to the development of Wikimedia projects, including MediaWiki, Wikidata, and other related technologies.',
+			'Wiki Phabricator Account (to track Bugs and Tasks) -',
+			'https://phabricator.wikimedia.org/p/Agamyasamuel',
+			'Wiki Gerrit Account (to track Commits) -',
+			'https://gerrit.wikimedia.org/r/q/owner:wikimedia@agamya.dev',
+			'4+ Merged Patches - in 1 Week',
+			'Part of "Trusted-Contributors" Group on Wiki Developer Circle.',
+			'https://phabricator.wikimedia.org/project/view/3104/',
 		],
 	},
-	{
-		title: 'Web Developer',
-		company_name: 'Shopify',
-		icon: shopify,
-		iconBg: '#383E56',
-		date: 'Jan 2022 - Jan 2023',
-		points: [
-			'Developing and maintaining web applications using React.js and other related technologies.',
-			'Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.',
-			'Implementing responsive design and ensuring cross-browser compatibility.',
-			'Participating in code reviews and providing constructive feedback to other developers.',
-		],
-	},
-	{
-		title: 'Full stack Developer',
-		company_name: 'Meta',
-		icon: meta,
-		iconBg: '#E6DEDD',
-		date: 'Jan 2023 - Present',
-		points: [
-			'Developing and maintaining web applications using React.js and other related technologies.',
-			'Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.',
-			'Implementing responsive design and ensuring cross-browser compatibility.',
-			'Participating in code reviews and providing constructive feedback to other developers.',
-		],
-	},
+	// {
+	// 	title: 'Web Developer',
+	// 	company_name: 'Shopify',
+	// 	icon: shopify,
+	// 	iconBg: '#383E56',
+	// 	date: 'Jan 2022 - Jan 2023',
+	// 	points: [
+	// 		'Developing and maintaining web applications using React.js and other related technologies.',
+	// 		'Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.',
+	// 		'Implementing responsive design and ensuring cross-browser compatibility.',
+	// 		'Participating in code reviews and providing constructive feedback to other developers.',
+	// 	],
+	// },
+	// {
+	// 	title: 'Full stack Developer',
+	// 	company_name: 'Meta',
+	// 	icon: meta,
+	// 	iconBg: '#E6DEDD',
+	// 	date: 'Jan 2023 - Present',
+	// 	points: [
+	// 		'Developing and maintaining web applications using React.js and other related technologies.',
+	// 		'Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.',
+	// 		'Implementing responsive design and ensuring cross-browser compatibility.',
+	// 		'Participating in code reviews and providing constructive feedback to other developers.',
+	// 	],
+	// },
 ];
 
 const testimonials = [
@@ -367,6 +384,102 @@ const projects = [
 			'https://github.com/Agamya-Samuel/TrackMyDeals-NextJS/',
 		preview_link: 'https://track-mydeals.agamya.dev/',
 	},
+	{
+		name: 'Sub Domains I manage - Portfolio',
+		description:
+			'A List of all the Projects I have worked on. Small, Big, Medium, Personal, or Professional. All are listed here. You can view the live preview of the project. The source code is also available on GitHub.',
+		tags: [
+			{
+				name: 'NextJS',
+				color: 'blue-text-gradient',
+			},
+			{
+				name: 'Tailwind CSS',
+				color: 'pink-text-gradient',
+			},
+			{
+				name: 'NextAPI Routes',
+				color: 'green-text-gradient',
+			},
+			{
+				name: 'Cloudflare',
+				color: 'orange-text-gradient',
+			},
+		],
+		image: domagamyadev,
+		source_code_link: 'https://github.com/Agamya-Samuel/dom.agamya.dev/',
+		preview_link: 'https://dom.agamya.dev/',
+	},
+	{
+		name: 'Course Selling App',
+		description:
+			'My First Project in React. A simple course selling app where you can view the courses and buy them. JWT Auth is used for authentication. MongoDB is used for storing the data. The backend is made in NodeJS.',
+		tags: [
+			{
+				name: 'ReactJS',
+				color: 'blue-text-gradient',
+			},
+			{
+				name: 'NodeJS',
+				color: 'green-text-gradient',
+			},
+			{
+				name: 'JWT Auth',
+				color: 'pink-text-gradient',
+			},
+			{
+				name: 'MongoDB',
+				color: 'green-text-gradient',
+			},
+		],
+		image: courseList,
+		source_code_link:
+			'https://github.com/Agamya-Samuel/course-selling-app-react',
+		preview_link: 'https://course-selling.agamya.dev/',
+	},
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+const workExperience = [
+	{
+		name: 'Wikimedia Open Source Contribution',
+		description:
+			'Feature like: Viewing, searching, and filtering products, browsing by category, adding items to the cart, and making payments via PayPal, Stripe, or Cash on Delivery. The ADMIN Dashboard allows for updating inventory, managing orders, and overseeing user accounts efficiently, fully SEO Optimised.',
+		tags: [
+			{
+				name: 'OpenSource',
+				color: 'pink-text-gradient',
+			},
+			{
+				name: 'TypeScript',
+				color: 'green-text-gradient',
+			},
+			{
+				name: 'Tailwind CSS',
+				color: 'pink-text-gradient',
+			},
+			{
+				name: 'PostgreSQL',
+				color: 'green-text-gradient',
+			},
+			{
+				name: 'Drizzle ORM',
+			},
+			{
+				name: 'Zod',
+			},
+		],
+		image: amazonia,
+		source_code_link:
+			'https://github.com/Agamya-Samuel/Amazonia-Ecommerce-NextJS/',
+		preview_link: 'https://amazonia.agamya.dev/',
+	},
+];
+
+export {
+	services,
+	technologies,
+	experiences,
+	testimonials,
+	projects,
+	workExperience,
+};
