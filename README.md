@@ -1,3 +1,7 @@
+# App Preview
+
+![App Preview](/agamya.dev-preview.png)
+
 <div align="center">
   <div>
     <img src="https://img.shields.io/badge/-React_JS-black?style=for-the-badge&logoColor=white&logo=react&color=61DAFB" alt="react.js" />
@@ -14,10 +18,6 @@
 2. ⚙️ [Tech Stack](#tech-stack)
 3. 🔋 [Features](#features)
 4. 🤸 [Quick Start](#quick-start)
-
-# App Preview
-
-![Aapp Preview](/agamya.dev-preview.png)
 
 ## <a name="introduction">🤖 Introduction</a>
 
