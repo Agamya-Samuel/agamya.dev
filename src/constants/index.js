@@ -45,6 +45,10 @@ export const navLinks = [
 		title: 'Projects',
 	},
 	{
+		id: 'https://r.agamya.dev',
+		title: 'Resume',
+	},
+	{
 		id: 'contact',
 		title: 'Contact',
 	},
@@ -140,11 +144,11 @@ const experiences = [
 		iconBg: '#fff',
 		date: 'August 2023 -',
 		points: [
-			'Led the "Design and development of multiple community-driven projects", enhancing collaboration and engagement within the tech community.',
-			'Managed a "Team of Developers and Designers", ensuring timely delivery of high-quality projects and fostering a collaborative work environment.',
-			'Organized and facilitated "Technical Hands-on Workshops and Hack-a-thons, Quizzes" - providing guidance and mentorship to participants and promoting knowledge sharing.',
+			'Letter of Appreciation from Mr. Ankit Kumar Verma, GDG Prayagraj Organizer, for Active Contributions to GDG.',
+			'https://drive.google.com/file/d/1d3qfb_kVBLd2k9fYWp8OtwJOocI0bBec/view?usp=sharing',
+			'Led the "Design and development of multiple community-driven projects" and managed a "Team of Developers and Designers", enhancing collaboration, engagement within the tech community, ensuring timely delivery of high-quality projects, and fostering a collaborative work environment.',
+			'Organized and facilitated "Technical Hands-on Workshops, Hack-a-thons, and Quizzes", and hosted community events, meetups, and conferences - providing guidance, mentorship, and promoting a culture of learning, networking, knowledge sharing, and collaboration among tech enthusiasts.',
 			'Collaborated with industry experts and speakers to curate and deliver impactful sessions during events, contributing to the growth and learning of community members.',
-			'Organized and hosted community events, meetups, and conferences, fostering a culture of learning, networking, and collaboration among tech enthusiasts.',
 		],
 	},
 	{
