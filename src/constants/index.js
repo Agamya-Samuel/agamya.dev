@@ -29,6 +29,7 @@ import {
 	gdg,
 	wikimedia,
 	courseList,
+	impulsiveweb,
 } from '../assets';
 
 export const navLinks = [
@@ -138,11 +139,12 @@ const technologies = [
 
 const experiences = [
 	{
-		title: 'Technical Lead and Design Lead',
+		title: 'Technical Lead and Design Lead (Volunteer)',
 		company_name: 'Google Developer Group, Prayagraj',
+		company_link: 'https://gdg.community.dev/gdg-prayagraj/',
 		icon: gdg,
 		iconBg: '#fff',
-		date: 'August 2023 -',
+		date: 'August 2024 - Present',
 		points: [
 			'Letter of Appreciation from Mr. Ankit Kumar Verma, GDG Prayagraj Organizer, for Active Contributions to GDG.',
 			'https://drive.google.com/file/d/1d3qfb_kVBLd2k9fYWp8OtwJOocI0bBec/view?usp=sharing',
@@ -154,6 +156,7 @@ const experiences = [
 	{
 		title: 'Open Source Contribution',
 		company_name: 'Wikimedia (Wikipedia)',
+		company_link: 'https://wikimedia.org/',
 		icon: wikimedia,
 		iconBg: '#fff',
 		date: 'July 2024 - Present',
@@ -166,6 +169,21 @@ const experiences = [
 			'4+ Merged Patches - in 1 Week',
 			'Part of "Trusted-Contributors" Group on Wiki Developer Circle.',
 			'https://phabricator.wikimedia.org/project/view/3104/',
+		],
+	},
+	{
+		title: 'Full Stack Developer, Intern',
+		company_name: 'Impulsive Web, Noida',
+		company_link: 'https://g.co/kgs/Gyj7Khj',
+		icon: impulsiveweb,
+		iconBg: '#ddd',
+		date: 'August 2024 - October 2024',
+		points: [
+			'Letter of Appreciation from Mr. Ankit Kumar Verma, GDG Prayagraj Organizer, for Active Contributions to GDG.',
+			'https://drive.google.com/file/d/1d3qfb_kVBLd2k9fYWp8OtwJOocI0bBec/view?usp=sharing',
+			'Led the "Design and development of multiple community-driven projects" and managed a "Team of Developers and Designers", enhancing collaboration, engagement within the tech community, ensuring timely delivery of high-quality projects, and fostering a collaborative work environment.',
+			'Organized and facilitated "Technical Hands-on Workshops, Hack-a-thons, and Quizzes", and hosted community events, meetups, and conferences - providing guidance, mentorship, and promoting a culture of learning, networking, knowledge sharing, and collaboration among tech enthusiasts.',
+			'Collaborated with industry experts and speakers to curate and deliver impactful sessions during events, contributing to the growth and learning of community members.',
 		],
 	},
 	// {

@@ -40,7 +40,13 @@ const ExperienceCard = ({ experience }) => {
 					className="text-secondary text-[14px] font-semibold"
 					style={{ margin: 0 }}
 				>
-					<span className='underline'>{experience.company_name}</span>
+					<a
+						href={experience.company_link}
+						target="_blank"
+						className="underline"
+					>
+						{experience.company_name}
+					</a>
 				</p>
 			</div>
 
@@ -55,7 +61,7 @@ const ExperienceCard = ({ experience }) => {
 								href={point}
 								target="_blank"
 								rel="noopener noreferrer"
-								className='underline text-blue-500 break-words'
+								className="underline text-blue-500 break-words"
 							>
 								{point}
 							</a>

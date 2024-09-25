@@ -38,6 +38,7 @@ import domagamyadev from './dom-agamya-dev.png';
 import courseList from './CoursesList.png';
 
 import live from './instagram-live.png';
+import impulsiveweb from './company/impulsiveweb.png';
 
 export {
 	logo,
@@ -76,4 +77,5 @@ export {
 	domagamyadev,
 	courseList,
 	live,
+	impulsiveweb,
 };
