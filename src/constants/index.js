@@ -60,18 +60,18 @@ const services = [
 		title: 'Web Developer',
 		icon: web,
 	},
-	{
-		title: 'React Native Developer',
-		icon: mobile,
-	},
+	// {
+	// 	title: 'React Native Developer',
+	// 	icon: mobile,
+	// },
 	{
 		title: 'Backend Developer',
 		icon: backend,
 	},
-	// {
-	//	title: 'Content Creator',
-	//	icon: creator,
-	// },
+	{
+		title: 'Content Creator',
+		icon: creator,
+	},
 	{
 		title: 'Database Administrator',
 		icon: web,
@@ -166,9 +166,9 @@ const experiences = [
 			'https://phabricator.wikimedia.org/p/Agamyasamuel',
 			'Wiki Gerrit Account (to track Commits) -',
 			'https://gerrit.wikimedia.org/r/q/owner:wikimedia@agamya.dev',
-			//'4+ Merged Patches - in 1 Week',
-			//'Part of "Trusted-Contributors" Group on Wiki Developer Circle.',
-			//'https://phabricator.wikimedia.org/project/view/3104/',
+			'4+ Merged Patches - in 1 Week',
+			'Part of "Trusted-Contributors" Group on Wiki Developer Circle.',
+			'https://phabricator.wikimedia.org/project/view/3104/',
 		],
 	},
 	{
