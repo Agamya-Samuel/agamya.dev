@@ -1,5 +1,5 @@
 import React from 'react';
-import Tilt from 'react-tilt';
+import Tilt from 'react-parallax-tilt';
 import { motion } from 'framer-motion';
 
 import { styles } from '../styles';
@@ -19,14 +19,7 @@ const ProjectCard = ({
 }) => {
 	return (
 		<motion.div variants={fadeIn('up', 'spring', index * 0.5, 0.75)}>
-			<Tilt
-				options={{
-					max: 45,
-					scale: 1,
-					speed: 450,
-				}}
-				className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
-			>
+			<Tilt className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full">
 				<div className="relative w-full h-[230px]">
 					<img
 						src={image}
@@ -53,7 +46,7 @@ const ProjectCard = ({
 				<div className="mt-5">
 					<h3 className="text-white font-bold text-[24px]">{name}</h3>
 					<button
-						class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-2"
+						className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-2"
 						onClick={() => window.open(preview_link, '_blank')}
 					>
 						<div className="flex gap-4 items-center">

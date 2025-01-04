@@ -1,5 +1,5 @@
 import { BrowserRouter } from 'react-router-dom';
-import { useEffect } from 'react';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import {
 	About,
@@ -14,48 +14,30 @@ import {
 	WorkExperience,
 } from './components';
 
+const queryClient = new QueryClient();
+
 const App = () => {
-	useEffect(() => {
-		// Handle initial load and hash changes
-		const handleScroll = () => {
-			const hash = window.location.hash;
-			if (hash) {
-				const element = document.getElementById(hash.slice(1));
-				if (element) {
-					element.scrollIntoView({ behavior: 'smooth' });
-				}
-			}
-		};
-
-		// Handle the initial load
-		handleScroll();
-
-		// Listen for hash changes
-		window.addEventListener('hashchange', handleScroll);
-
-		// Cleanup
-		return () => window.removeEventListener('hashchange', handleScroll);
-	}, []);
-
 	return (
-		<BrowserRouter>
-			<div className="relative z-0 bg-primary">
-				<div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
-					<Navbar />
-					<Hero />
+		<QueryClientProvider client={queryClient}>
+			<BrowserRouter>
+				<div className="relative z-0 bg-primary">
+					<div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
+						<Navbar />
+						<Hero />
+					</div>
+					<About />
+					<Experience />
+					<Tech />
+					<Projects />
+					<WorkExperience />
+					<Feedbacks />
+					<div className="relative z-0">
+						<Contact />
+						<StarsCanvas />
+					</div>
 				</div>
-				<About />
-				<Experience />
-				{/* <Tech /> */}
-				{/* <WorkExperience /> */}
-				<Projects />
-				{/* <Feedbacks /> */}
-				<div className="relative z-0">
-					<Contact />
-					<StarsCanvas />
-				</div>
-			</div>
-		</BrowserRouter>
+			</BrowserRouter>
+		</QueryClientProvider>
 	);
 };
 
