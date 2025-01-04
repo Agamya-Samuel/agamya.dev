@@ -1,4 +1,5 @@
 import { BrowserRouter } from 'react-router-dom';
+import { useEffect } from 'react';
 
 import {
 	About,
@@ -14,6 +15,28 @@ import {
 } from './components';
 
 const App = () => {
+	useEffect(() => {
+		// Handle initial load and hash changes
+		const handleScroll = () => {
+			const hash = window.location.hash;
+			if (hash) {
+				const element = document.getElementById(hash.slice(1));
+				if (element) {
+					element.scrollIntoView({ behavior: 'smooth' });
+				}
+			}
+		};
+
+		// Handle the initial load
+		handleScroll();
+
+		// Listen for hash changes
+		window.addEventListener('hashchange', handleScroll);
+
+		// Cleanup
+		return () => window.removeEventListener('hashchange', handleScroll);
+	}, []);
+
 	return (
 		<BrowserRouter>
 			<div className="relative z-0 bg-primary">
