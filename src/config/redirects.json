@@ -1,0 +1,52 @@
+{
+	"redirects": [
+		{
+			"path": "web-premium",
+			"url": "https://www.hostinger.in/cart?product=hosting%3Ahostinger_premium&period=12&referral_type=cart_link&REFERRALCODE=1AGAMYA52&referral_id=01943301-8f36-712d-80e4-9bb4df7e63eb"
+		},
+		{
+			"path": "web-business",
+			"url": "https://www.hostinger.in/cart?product=hosting%3Ahostinger_startup&period=12&referral_type=cart_link&REFERRALCODE=1AGAMYA52&referral_id=01943302-8f36-712d-80e4-9bb4df7e63eb"
+		},
+		{
+			"path": "cloud-start",
+			"url": "https://www.hostinger.in/cart?product=hosting%3Acloud_economy&period=12&referral_type=cart_link&REFERRALCODE=1AGAMYA52&referral_id=01943311-cbf5-721e-a93f-f8e16bfda6f4"
+		},
+		{
+			"path": "cloud-start",
+			"url": "https://www.hostinger.in/cart?product=hosting%3Acloud_economy&period=12&referral_type=cart_link&REFERRALCODE=1AGAMYA52&referral_id=01943312-1883-728c-be1f-73e485f143d7"
+		},
+		{
+			"path": "cloud-pro",
+			"url": "https://www.hostinger.in/cart?product=hosting%3Acloud_professional&period=12&referral_type=cart_link&REFERRALCODE=1AGAMYA52&referral_id=01943307-29ff-7099-9923-15d01341b268"
+		},
+		{
+			"path": "cloud-enterprise",
+			"url": "https://www.hostinger.in/cart?product=hosting%3Acloud_enterprise&period=12&referral_type=cart_link&REFERRALCODE=1AGAMYA52&referral_id=01943307-d6f4-72db-9ae1-6e43e6651b98"
+		},
+		{
+			"path": "vps1",
+			"url": "https://www.hostinger.in/cart?product=vps%3Avps_kvm_1&period=12&referral_type=cart_link&REFERRALCODE=1AGAMYA52&referral_id=01943306-3a75-73a9-a201-7aac3c19b571"
+		},
+		{
+			"path": "vps2",
+			"url": "https://www.hostinger.in/cart?product=vps%3Avps_kvm_2&period=12&referral_type=cart_link&REFERRALCODE=1AGAMYA52&referral_id=01943312-746b-71fa-886b-4ade7f70e8e8"
+		},
+		{
+			"path": "vps4",
+			"url": "https://www.hostinger.in/cart?product=vps%3Avps_kvm_4&period=12&referral_type=cart_link&REFERRALCODE=1AGAMYA52&referral_id=01943313-00cd-704c-87dd-f6684e360c0e"
+		},
+		{
+			"path": "vps8",
+			"url": "https://www.hostinger.in/cart?product=vps%3Avps_kvm_8&period=12&referral_type=cart_link&REFERRALCODE=1AGAMYA52&referral_id=01943313-6244-70ea-84a4-3aebf192be42"
+		},
+		{
+			"path": "github",
+			"url": "https://github.com/agamya-samuel"
+		},
+		{
+			"path": "linkedin",
+			"url": "https://linkedin.com/in/agamyasamuel"
+		}
+	]
+}

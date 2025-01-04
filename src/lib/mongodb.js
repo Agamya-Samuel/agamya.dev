@@ -39,4 +39,18 @@ const contactSchema = new mongoose.Schema({
 	timestamps: true
 });
 
-export const Contact = mongoose.models.Contact || mongoose.model('Contact', contactSchema); 
+export const Contact = mongoose.models.Contact || mongoose.model('Contact', contactSchema);
+
+const analyticsSchema = new mongoose.Schema({
+	path: String,
+	destinationUrl: String,
+	type: String,
+	timestamp: Date,
+	referrer: String,
+	userAgent: String,
+	ip: String
+}, {
+	timestamps: true
+});
+
+export const Analytics = mongoose.models.Analytics || mongoose.model('Analytics', analyticsSchema);

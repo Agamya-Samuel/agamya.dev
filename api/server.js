@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import { connectToDB, Contact } from '../src/lib/mongodb.js';
+import { connectToDB, Contact, Analytics } from '../src/lib/mongodb.js';
 import { getEmailTemplate } from '../src/utils/emailTemplates.js';
 import { Resend } from 'resend';
 import dotenv from 'dotenv';
@@ -191,6 +191,70 @@ app.use((err, req, res, next) => {
 		success: false,
 		error: 'An unexpected error occurred'
 	});
+});
+
+// Analytics endpoint
+app.post('/api/analytics/redirect', async (req, res) => {
+	try {
+		const { path, destinationUrl, type, timestamp, referrer, userAgent } = req.body;
+		const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
+
+		await connectToDB();
+		await Analytics.create({
+			path,
+			destinationUrl,
+			type,
+			timestamp: new Date(timestamp),
+			referrer,
+			userAgent,
+			ip
+		});
+
+		res.json({ success: true });
+	} catch (error) {
+		console.error('Error tracking analytics:', error);
+		res.status(500).json({ success: false, error: 'Failed to track analytics' });
+	}
+});
+
+// Add analytics to dashboard endpoint
+app.get('/api/dashboard/analytics', authenticateToken, async (req, res) => {
+	try {
+		await connectToDB();
+
+		// Get analytics summary
+		const analytics = await Analytics.aggregate([
+			{
+				$group: {
+					_id: {
+						path: '$path',
+						type: '$type'
+					},
+					count: { $sum: 1 },
+					lastUsed: { $max: '$timestamp' }
+				}
+			},
+			{
+				$group: {
+					_id: '$_id.path',
+					actions: {
+						$push: {
+							type: '$_id.type',
+							count: '$count',
+							lastUsed: '$lastUsed'
+						}
+					},
+					totalInteractions: { $sum: '$count' }
+				}
+			},
+			{ $sort: { totalInteractions: -1 } }
+		]);
+
+		res.json(analytics);
+	} catch (error) {
+		console.error('Error fetching analytics:', error);
+		res.status(500).json({ success: false, error: 'Failed to fetch analytics' });
+	}
 });
 
 // Start server

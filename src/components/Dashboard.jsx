@@ -5,6 +5,7 @@ import { styles } from '../styles';
 import { fadeIn } from '../utils/motion';
 import { HiMail, HiX } from 'react-icons/hi';
 import { LuLoaderCircle } from 'react-icons/lu';
+import AnalyticsDashboard from './AnalyticsDashboard';
 
 const TOKEN_KEY = 'dashboardToken';
 
@@ -160,6 +161,7 @@ const Dashboard = () => {
 		recipient: '',
 		recipientName: '',
 	});
+	const [activeTab, setActiveTab] = useState('submissions'); // 'submissions' or 'analytics'
 
 	useEffect(() => {
 		fetch('/api/health')
@@ -317,31 +319,13 @@ const Dashboard = () => {
 		);
 	}
 
-	if (isLoading) {
-		return (
-			<div className="min-h-screen flex items-center justify-center bg-primary">
-				<div className="text-white text-xl">Loading submissions...</div>
-			</div>
-		);
-	}
-
-	if (isError) {
-		return (
-			<div className="min-h-screen flex items-center justify-center bg-primary">
-				<div className="text-red-500 text-xl">
-					Error loading submissions
-				</div>
-			</div>
-		);
-	}
-
 	return (
 		<>
 			<div className="min-h-screen bg-primary p-8">
 				<div className="max-w-7xl mx-auto">
 					<div className="flex justify-between items-center mb-8">
 						<h2 className={styles.sectionHeadText}>
-							Contact Form Submissions
+							Admin Dashboard
 						</h2>
 						<button
 							onClick={handleLogout}
@@ -351,62 +335,102 @@ const Dashboard = () => {
 						</button>
 					</div>
 
-					{submissions?.length === 0 ? (
-						<motion.div
-							variants={fadeIn('up', 'spring', 0.3, 0.75)}
-							className="bg-black-100 p-8 rounded-2xl text-center"
+					<div className="flex gap-4 mb-8">
+						<button
+							onClick={() => setActiveTab('submissions')}
+							className={`py-2 px-4 rounded transition-colors ${
+								activeTab === 'submissions'
+									? 'bg-tertiary text-white'
+									: 'bg-black-100 text-secondary hover:text-white'
+							}`}
 						>
-							<p className="text-white text-xl">
-								No submissions yet
-							</p>
-							<p className="text-secondary mt-2">
-								When users fill out the contact form, their
-								messages will appear here.
-							</p>
-						</motion.div>
-					) : (
-						<div className="grid gap-6">
-							{submissions?.map((submission) => (
-								<motion.div
-									key={submission._id}
-									variants={fadeIn('up', 'spring', 0.3, 0.75)}
-									className="bg-black-100 p-6 rounded-2xl"
-								>
-									<div className="flex justify-between items-start">
-										<div>
-											<h3 className="text-white font-bold text-[24px]">
-												{submission.name}
-											</h3>
-											<div className="flex items-center gap-4">
-												<p className="text-secondary">
-													{submission.email}
-												</p>
-												<button
-													onClick={() =>
-														handleSendEmail(
-															submission.email,
-															submission.name
-														)
-													}
-													className="flex items-center gap-2 bg-tertiary py-2 px-4 rounded text-white hover:bg-tertiary/80 transition-colors"
-												>
-													<HiMail className="text-lg" />
-													Send Email
-												</button>
+							Submissions
+						</button>
+						<button
+							onClick={() => setActiveTab('analytics')}
+							className={`py-2 px-4 rounded transition-colors ${
+								activeTab === 'analytics'
+									? 'bg-tertiary text-white'
+									: 'bg-black-100 text-secondary hover:text-white'
+							}`}
+						>
+							Analytics
+						</button>
+					</div>
+
+					{activeTab === 'submissions' ? (
+						isLoading ? (
+							<div className="text-white text-xl text-center">
+								Loading submissions...
+							</div>
+						) : isError ? (
+							<div className="text-red-500 text-xl text-center">
+								Error loading submissions
+							</div>
+						) : submissions?.length === 0 ? (
+							<motion.div
+								variants={fadeIn('up', 'spring', 0.3, 0.75)}
+								className="bg-black-100 p-8 rounded-2xl text-center"
+							>
+								<p className="text-white text-xl">
+									No submissions yet
+								</p>
+								<p className="text-secondary mt-2">
+									When users fill out the contact form, their
+									messages will appear here.
+								</p>
+							</motion.div>
+						) : (
+							<div className="grid gap-6">
+								{submissions?.map((submission) => (
+									<motion.div
+										key={submission._id}
+										variants={fadeIn(
+											'up',
+											'spring',
+											0.3,
+											0.75
+										)}
+										className="bg-black-100 p-6 rounded-2xl"
+									>
+										<div className="flex justify-between items-start">
+											<div>
+												<h3 className="text-white font-bold text-[24px]">
+													{submission.name}
+												</h3>
+												<div className="flex items-center gap-4">
+													<p className="text-secondary">
+														{submission.email}
+													</p>
+													<button
+														onClick={() =>
+															handleSendEmail(
+																submission.email,
+																submission.name
+															)
+														}
+														className="flex items-center gap-2 bg-tertiary py-2 px-4 rounded text-white hover:bg-tertiary/80 transition-colors"
+													>
+														<HiMail className="text-lg" />
+														Send Email
+													</button>
+												</div>
 											</div>
+											<p className="text-secondary text-sm">
+												{new Date(
+													submission.createdAt
+												).toLocaleString()}
+											</p>
 										</div>
-										<p className="text-secondary text-sm">
-											{new Date(
-												submission.createdAt
-											).toLocaleString()}
+										<p className="mt-4 text-secondary">
+											{submission.message}
 										</p>
-									</div>
-									<p className="mt-4 text-secondary">
-										{submission.message}
-									</p>
-								</motion.div>
-							))}
-						</div>
+									</motion.div>
+								))}
+							</div>
+						)
+					) : (
+						<AnalyticsDashboard />
 					)}
 				</div>
 			</div>

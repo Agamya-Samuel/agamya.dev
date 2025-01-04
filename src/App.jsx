@@ -14,6 +14,8 @@ import {
 	StarsCanvas,
 } from './components';
 import Dashboard from './components/Dashboard';
+import Redirect from './components/Redirect';
+import RedirectList from './components/RedirectList';
 
 const queryClient = new QueryClient();
 
@@ -44,6 +46,8 @@ const App = () => {
 						}
 					/>
 					<Route path="/dashboard" element={<Dashboard />} />
+					<Route path="/redirects" element={<RedirectList />} />
+					<Route path="/:path" element={<Redirect />} />
 				</Routes>
 			</BrowserRouter>
 		</QueryClientProvider>
