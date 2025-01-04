@@ -1,15 +1,19 @@
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
-export const getEmailTemplate = (templateName, data) => {
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+export const getEmailTemplate = (templateName, data = {}) => {
 	try {
-		const templatePath = path.join(process.cwd(), 'src', 'templates', templateName);
+		const templatePath = path.join(__dirname, '..', 'templates', templateName);
 		let template = fs.readFileSync(templatePath, 'utf8');
 
-		// Replace all placeholders with actual data
-		Object.keys(data).forEach(key => {
+		// Replace placeholders with actual data
+		Object.entries(data).forEach(([key, value]) => {
 			const regex = new RegExp(`{{${key}}}`, 'g');
-			template = template.replace(regex, data[key]);
+			template = template.replace(regex, value);
 		});
 
 		return template;

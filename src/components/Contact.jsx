@@ -42,7 +42,7 @@ const Contact = () => {
 		},
 		onSuccess: () => {
 			setSuccessMessage(
-				'Thank you. I will get back to you as soon as possible.'
+				'Thank you! I will get back to you as soon as possible. Meanwhile, I have sent you an email with my Resume attached.'
 			);
 			setErrorMessage('');
 			setForm({

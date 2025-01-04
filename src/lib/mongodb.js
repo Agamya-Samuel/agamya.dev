@@ -3,38 +3,40 @@ import mongoose from 'mongoose';
 let isConnected = false;
 
 export const connectToDB = async () => {
-	if (isConnected) {
-		console.log('MongoDB is already connected');
-		return;
-	}
+	if (isConnected) return;
 
 	try {
 		await mongoose.connect(process.env.MONGODB_URI);
 		isConnected = true;
-		console.log('MongoDB connected');
 	} catch (error) {
-		console.error('Error connecting to MongoDB:', error);
+		console.error('MongoDB connection error:', error);
+		throw error;
 	}
 };
 
-// Contact form schema
-const ContactSchema = new mongoose.Schema({
+const contactSchema = new mongoose.Schema({
 	name: {
 		type: String,
 		required: [true, 'Name is required'],
+		trim: true,
+		minLength: [2, 'Name must be at least 2 characters long'],
+		maxLength: [50, 'Name cannot be more than 50 characters long']
 	},
 	email: {
 		type: String,
 		required: [true, 'Email is required'],
+		trim: true,
+		match: [/^\S+@\S+\.\S+$/, 'Please enter a valid email address']
 	},
 	message: {
 		type: String,
 		required: [true, 'Message is required'],
-	},
-	createdAt: {
-		type: Date,
-		default: Date.now,
-	},
+		trim: true,
+		minLength: [10, 'Message must be at least 10 characters long'],
+		maxLength: [1000, 'Message cannot be more than 1000 characters long']
+	}
+}, {
+	timestamps: true
 });
 
-export const Contact = mongoose.models.Contact || mongoose.model('Contact', ContactSchema); 
+export const Contact = mongoose.models.Contact || mongoose.model('Contact', contactSchema); 
