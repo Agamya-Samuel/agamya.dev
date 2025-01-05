@@ -47,6 +47,10 @@
 		{
 			"path": "linkedin",
 			"url": "https://linkedin.com/in/agamyasamuel"
+		},
+		{
+			"path": "gmeet",
+			"url": "https://meet.google.com/hvf-iqqo-stf"
 		}
 	]
 }
