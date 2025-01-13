@@ -36,8 +36,8 @@ const App = () => {
 								<Experience />
 								<Tech />
 								<Projects />
-								<WorkExperience />
- 								{/*<Feedbacks /> */}
+								{/*<WorkExperience /> */}
+								{/*<Feedbacks /> */}
 								<div className="relative z-0">
 									<Contact />
 									<StarsCanvas />
